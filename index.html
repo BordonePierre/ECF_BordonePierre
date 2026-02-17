@@ -3,9 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil</title>
+    <link href="assets/scss/output.css" rel="stylesheet">
 </head>
 <body>
     
+    <!-- header -->
+    <header>
+
+        <!-- navbar -->
+        <nav class="bg-main flex flex-row items-center justify-between fixed w-full z-50 h-25 pr-15 border-2 border-main border-b-black">
+
+            <!-- logo -->
+            <a href="index.html"><img class="w-40 h-25 md:w-80 md:h-50" src="assets/image/Logo.png" alt="Logo"></a>
+
+            <!-- research -->
+            <input type="text"
+                    id="searchInput"
+                    placeholder="Rechercher..."
+                    class="px-1 py-1 md:px-10 md:py-3 md:mr-10 text-lg rounded-2xl bg-white"
+            />
+
+
+            <!-- icones profile/cart -->
+            <section class="hidden md:flex flex-row gap-10">
+                <img class="w-10 h-10" src="assets/image/userLogo.png" alt="userLogo">
+                <img class="w-10 h-10" src="assets/image/cartlogo.png" alt="cartLogo">
+            </section>
+
+            <!-- menu burger -->
+            <button onclick="menuBurger()" class="md:hidden flex flex-col gap-1 ml-2">
+                <span class="block w-5 h-[0.15rem] bg-back"></span>
+                <span class="block w-5 h-[0.15rem] bg-back"></span>
+                <span class="block w-5 h-[0.15rem] bg-back"></span>
+            </button>
+
+        </nav>
+
+        <!-- categories mobile -->
+            <section class="hidden md:hidden bg-main md:flex flex-col relative gap-10 text-white items-center pt-30 pb-5 border-2 border-main border-b-black" id="burger">
+                <a href=""><p class="hover:bg-back">Ordinateurs</p></a>
+                <a href=""><p class="hover:bg-back">Pièces</p></a>
+                <a href=""><p class="hover:bg-back">Périphériques</p></a>
+                <a href=""><p class="hover:bg-back">Réseaux</p></a>
+                <a href=""><p class="hover:bg-back">Tablettes</p></a>
+            </section>
+        
+        <!-- categories computer -->
+        <section class="bg-main hidden md:flex flex-row text-white text-[20px] items-center justify-between pt-30 pb-5 w-full pr-10 pl-10">
+            <p>Ordinateurs</p>
+            <p>Pièces</p>
+            <p>Périphériques</p>
+            <p>Réseaux</p>
+            <p>Tablettes</p>
+        </section>
+        
+    </header>
+    
+    <!-- main -->
+    <main class="bg-back">
+
+        <!-- image main and text -->
+        <section class="flex md:pt-0 pt-25 relative" id="img">
+            <img class="object-cover" src="assets/image/imageMain.jpg" alt="imageMain">
+            <div class="bottom-6 left-6 absolute text-white text-[30px] md:text-[64px] items-center bg-main/50 hover:bg-main/70 px-2">
+                <a href=""><h2>Les nouveautés</h2></a>
+            </div>
+        </section>
+
+        <!-- Text first part cards -->
+        <section class="flex flex-row justify-between text-black pt-5 px-5 text-[24px]">
+            <h3>Explorez le gaming</h3>
+            <a href=""><p class= "underline">Voir tout</p></a>
+        </section>
+
+        <!-- first cards -->
+        <section class="flex flex-wrap pt-2 px-5 gap-2">
+            <a href=""><div class="flex flex-col">
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcGaming1.png" alt="PcGaming1">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Gamer 1</p>
+                    <p>1739,90€</p>
+                </div></a>
+            </div>
+            <a href=""><div>   
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcGaming2.png" alt="PcGaming2">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Gamer 2</p>
+                    <p>1989,90€</p>
+                </div>
+            </div></a>
+            <a href=""><div>   
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcGaming1.png" alt="PcGaming3">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Gamer 3</p>
+                    <p>1989,90€</p>
+                </div>
+            </div></a>
+        </section>
+
+        <!-- Text second part cards -->
+        <section class="flex flex-row justify-between text-black pt-5 px-5 text-[24px]">
+            <h3>Pour travailler</h3>
+            <a href=""><p class= "underline">Voir tout</p></a>
+        </section>
+
+        <!-- second cards -->
+                <section class="flex flex-wrap pt-2 px-5 gap-2 pb-5">
+            <a href=""><div class="flex flex-col">
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcTravail1.png" alt="PcTravail1">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Travail 1</p>
+                    <p>1739,90€</p>
+                </div></a>
+            </div>
+            <a href=""><div>   
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcTravail2.jpg" alt="PcTravail2">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Travail 2</p>
+                    <p>1989,90€</p>
+                </div>
+            </div></a>
+            <a href=""><div>   
+                <img class="w-127 h-80 border-2 border-black" src="assets/image/ImageProduitPcTravail1.png" alt="PcGTravail3">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <p>PC Travail 3</p>
+                    <p>1989,90€</p>
+                </div>
+            </div></a>
+        </section>
+
+        <!-- footer -->
+        <footer class="bg-main flex flex-row text-white justify-center gap-15 py-10 border-2 border-main border-t-black">
+            <section class="flex flex-col gap-5">
+                <p class="text-[20px]">TechShop</p>
+                <div class="flex flex-col gap-3">
+                    <p>Contactez nous</p>
+                    <p>Mentions légales/CGU</p>
+                    <p>Politique de confidentialité</p>
+                    <p>Nos réseaux :</p>
+                </div>
+            </section>
+            <section class="flex flex-col gap-5">
+                <p class="text-[20px]">Catégories populaires</p>
+                <div class="flex flex-col gap-3">
+                    <p>Composants</p>
+                    <p>Ordinateurs</p>
+                    <p>Stockage interne</p>
+                    <p>Périphérique</p>
+                </div>
+            </section>
+        </footer>
+    </main>
+
+
+
+    <!-- link to js -->
+    <script src="assets/js/accueil.js"></script>
+
 </body>
 </html>
