@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Produits</title>
     <link href="assets/scss/output.css" rel="stylesheet">
 </head>
 <body>
@@ -165,89 +165,31 @@
     <!-- main -->
     <main class="bg-back">
 
-        <section class="flex flex-row gap-10 px-5 py-5">
+        <section class="flex flex-row gap-10 md:pt-0 pt-25 py-5 items-center justify-center">
             <!-- filter mobile -->
-            <img class="bg-main w-10 h-10 border-2 border-black" src="assets/image/filter.png" alt="filter">
+            <img class="bg-main w-10 h-10 border-2 border-black flex md:hidden" src="assets/image/filter.png" alt="filter">
 
             <!-- text top -->
             <h3 class="text-black text-[24px] pt-5">Nos produits...</h3>
         </section>
 
-        <!-- filter computer -->
-
-        <!-- products -->
-        <section class="flex flex-wrap gap-2 px-5 pb-5">
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">
-                <img class="w-127 border-2 border-black" src="assets/image/ImageProduitPcGaming1.png" alt="PcGaming1">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>PC Gamer 1</p>
-                    <p>1739,90€</p>
+        <!-- filter and products -->
+        <section class="flex flex-row">
+            <!-- filter computer -->
+            <div class="bg-main md:flex hidden flex-col w-full ml-5">
+                <div class="flex flex-row items-center justify-center pt-5 gap-20">
+                    <h3 class="text-white text-[48px]">Filtrer</h3>
+                    <img class="invert w-10 h-10" src="assets/image/filter.png" alt="filter">
                 </div>
-            </div></a>
+            </div>
 
-            <a href=""><div class="flex-col transition-all duration-200 hover:scale-102">   
-                <img class="w-127 border-2 border-black" src="assets/image/ImageProduitPcGaming2.png" alt="PcGaming2">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>PC Gamer 2</p>
-                    <p>1989,90€</p>
-                </div>
-            </div></a>
-
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">
-                <img class="w-127 border-2 border-black" src="assets/image/ImageProduitPcTravail1.png" alt="PcTravail1">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>PC Travail 1</p>
-                    <p>799,90€</p>
-                </div>
-            </div></a>
-
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">   
-                <img class="w-127 h-93 border-2 border-black" src="assets/image/ImageProduitPcTravail2.jpg" alt="PcTravail2">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>PC Travail 2</p>
-                    <p>999,99€</p>
-                </div>
-            </div></a>
-
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">
-                <img class="w-127 border-2 border-black " src="assets/image/ImageProduitCarteGraphique1.png" alt="CarteGraphique1">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>Carte graphique 1</p>
-                    <p>399,99€</p>
-                </div>
-            </div></a>
-
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">   
-                <img class="w-127 border-2 border-black" src="assets/image/ImageProduitCarteGraphique2.png" alt="CarteGraphique2">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>Carte graphique 2</p>
-                    <p>699,99€</p>
-                </div>
-            </div></a>
-
-            <a href=""><div class="flex flex-col transition-all duration-200 hover:scale-102">
-                <img class="w-127 border-2 border-black " src="assets/image/ImageProduitEcran1.png" alt="Ecran1">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>Ecran 1</p>
-                    <div class="flex flex-row gap-4">
-                        <p>299,99€</p>
-                        <p class="line-through decoration-red-500 decoration-2">349,99€</p>
-                    </div>  
-                </div>
-            </div></a>
-
-            <a href=""><div class="hidden md:flex flex-col transition-all duration-200 hover:scale-102">   
-                <img class="w-127 border-2 border-black" src="assets/image/ImageProduitEcran2.png" alt="Ecran2">
-                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
-                    <p>Ecran 2</p>
-                    <div class="flex flex-row gap-4">
-                        <p>499,99€</p>
-                        <p class="line-through decoration-red-500 decoration-2">549,99€</p>
-                    </div>
-                </div>
-            </div></a>
+            <!-- products -->
+            <div class="flex flex-wrap gap-2 px-5 py-5 items-center justify-center" id="products">
+                
+        </div>
 
         </section>
+        
 
     </main>
 
@@ -283,7 +225,7 @@
     </footer>
 
     <!-- link to js -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/products.js"></script>
 
 </body>
 </html>
