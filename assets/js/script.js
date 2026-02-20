@@ -1,19 +1,3 @@
-// show or hide burger menu
-function menuBurger() {
-    const menu = document.getElementById('burger');
-    const image = document.getElementById('img');
-
-    menu.classList.toggle('hidden'); // add or remove hidden
-    menu.classList.toggle('flex');   // add or remove flex
-    image.classList.toggle('pt-25');
-}
-
-// show or hide togglemenu
-function toggleMenu(id) {
-    const menu = document.getElementById(id);
-    menu.classList.toggle('hidden');
-}
-
 // slider
 function initSlider(sliderId) {
     const slider = document.querySelector(`#${sliderId}`);

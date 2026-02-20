@@ -9,184 +9,238 @@
 <body>
     
     <!-- header -->
-    <header>
+    <header id="header">
 
-        <!-- navbar -->
-        <nav class="bg-main flex flex-row items-center justify-between fixed w-full z-50 h-25 pr-15 border-2 border-main border-b-black">
-
-            <!-- logo -->
-            <a href="index.html"><img class="w-40 h-25 md:w-80 md:h-50" src="assets/image/Logo.png" alt="Logo"></a>
-
-            <!-- research -->
-            <input type="text"
-                    id="searchInput"
-                    placeholder="Rechercher..."
-                    class="px-1 py-1 md:px-10 md:py-3 md:mr-10 text-lg rounded-2xl bg-white focus:border-sky-500 focus:outline focus:outline-sky-500"
-            />
-
-
-            <!-- icones profile/cart -->
-            <section class="hidden md:flex flex-row gap-10">
-                <img class="w-10 h-10" src="assets/image/logoUSer.png" alt="userLogo">
-                <img class="w-10 h-10" src="assets/image/logoCart.png" alt="cartLogo">
-            </section>
-
-            <!-- menu burger -->
-            <button onclick="menuBurger()" class="md:hidden flex flex-col gap-1 ml-2">
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-            </button>
-
-        </nav>
-
-        <!-- categories mobile -->
-            <section class="hidden md:hidden bg-main md:flex flex-col relative gap-10 text-white items-center pt-30 pb-5 border-2 border-main border-b-black" id="burger">
-
-                <div class="group flex flex-col relative w-40">
-                    <button onclick="toggleMenu('menu-ordi')" class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                        <span>Ordinateurs</span>
-                    </button>
-                    <ul id="menu-ordi" class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                        <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Portables</li>
-                        <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Gaming</li>
-                        <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Fixes</li>
-                    </ul>
-                </div>
-
-                <div class="group flex flex-col relative w-40">
-                <button onclick="toggleMenu('menu-pieces')" class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Pièces</span>
-                </button>
-                <ul id="menu-pieces" class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes graphiques</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Ventilateurs</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes mères</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button onclick="toggleMenu('menu-periph')" class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Périphériques</span>
-                </button>
-                <ul id="menu-periph" class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Ecrans</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Souris</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Claviers</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button onclick="toggleMenu('menu-res')" class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Réseaux</span>
-                </button>
-                <ul id="menu-res" class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Câbles réseaux</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes réseaux</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Routeurs et modems</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button onclick="toggleMenu('menu-tab')" class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Tablettes</span>
-                </button>
-                <ul id="menu-tab" class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Samsung</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Apple</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Câbles</li>
-                </ul>
-            </div>
-
-            </section>
-        
-        <!-- categories computer -->
-        <section class="bg-main hidden md:flex flex-row text-white text-[20px] items-center justify-between pt-30 pb-5 w-full px-10">
-
-            <div class="group flex flex-col relative w-40">
-                <button class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Ordinateurs</span>
-                </button>
-                <ul class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Portables</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Gaming</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Fixes</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Pièces</span>
-                </button>
-                <ul class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes graphiques</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Ventilateurs</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes mères</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Périphériques</span>
-                </button>
-                <ul class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Ecrans</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Souris</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Claviers</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Réseaux</span>
-                </button>
-                <ul class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Câbles réseaux</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Cartes réseaux</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Routeurs et modems</li>
-                </ul>
-            </div>
-
-            <div class="group flex flex-col relative w-40">
-                <button class="w-full text-left px-4 py-2 bg-main hover:bg-back hover:text-main transition-colors">
-                    <span>Tablettes</span>
-                </button>
-                <ul class="hidden group-hover:block absolute top-full left-0 w-40 bg-main py-1 shadow-lg z-50">
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Samsung</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Apple</li>
-                    <li class="px-4 py-2 hover:bg-back hover:text-main cursor-pointer">Câbles</li>
-                </ul>
-            </div>
-
-        </section>
-        
     </header>
 
     <!-- main -->
     <main class="bg-back">
 
+        <!-- filter icone and text -->
         <section class="flex flex-row gap-10 md:pt-0 pt-25 py-5 items-center justify-center">
-            <!-- filter mobile -->
-            <img class="bg-main w-10 h-10 border-2 border-black flex md:hidden" src="assets/image/filter.png" alt="filter">
+
+            <!-- filter icone mobile -->
+            <img class="bg-main w-10 h-10 border-2 border-black flex md:hidden" src="assets/image/filter.png" alt="filter" onclick="filterShow()">
 
             <!-- text top -->
             <h3 class="text-black text-[24px] pt-5">Nos produits...</h3>
+
         </section>
+
+        <!-- filter mobile -->
+        <div class="bg-main hidden md:hidden md:flex flex-col w-full text-white h-full" id="filter">
+
+            <!-- logo, text filter -->
+            <h3 class="text-[48px] pt-5 flex items-center justify-center">Filtrer</h3>
+                
+            <!-- line -->
+            <div class="w-full h-px bg-back"></div>
+
+            <!-- price, slider -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="p-6 w-full max-w-md">
+                    <p class="pb-2 text-[36px]">Prix</p>
+                    <div class="pb-4">
+                        <input type="range" id="price-range" class="w-full accent-back" min="0" max="2000" value="500" oninput="updatePriceMobile(this.value)">
+                    </div>
+                    <div class="flex justify-between">
+                        <span id="minPriceMobile">0€</span>
+                        <span id="maxPriceMobile">2000€</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- line -->
+            <div class="w-full h-px bg-back"></div>
+
+            <!-- categories -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="p-6 w-full max-w-md">
+                    <p class="pb-2 text-[36px]">Catégories</p>
+                        <div class="flex flex-col gap-2 text-[24px]">
+                        <div>
+                            <input type="checkbox" id="ordinateurs" name="ordinateurs"/>
+                            <label for="ordinateurs">Ordinateurs</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="pieces" name="pieces"/>
+                            <label for="pieces">Pièces</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="peripheriques" name="peripheriques"/>
+                            <label for="peripheriques">Périphériques</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="reseau" name="reseau"/>
+                            <label for="reseau">Réseau</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="tablettes" name="tablettes"/>
+                            <label for="tablettes">Tablettes</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- line -->
+            <div class="w-full h-px bg-back"></div>
+
+            <!-- brands -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="p-6 w-full max-w-md">
+                    <p class="pb-2 text-[36px]">Marques</p>
+                        <div class="flex flex-col gap-2 text-[24px]">
+                        <div>
+                            <input type="checkbox" id="marque1" name="marque1"/>
+                            <label for="marque1">Marque 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="marque2" name="marque2"/>
+                            <label for="marque2">Marque 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="marque3" name="marque3"/>
+                            <label for="marque3">Marque 3</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="marque4" name="marque4"/>
+                            <label for="marque4">Marque 4</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="marque5" name="marque5"/>
+                            <label for="marque5">Marque 5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- line -->
+            <div class="w-full h-px bg-back"></div>
+
+            <!-- products availables -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="p-6 w-full max-w-md">
+                    <p class="pb-2 text-[36px]">Disponible</p>
+                    <div class="text-[24px]">
+                        <input type="checkbox" id="disponibles" name="disponibles"/>
+                        <label for="disponibles">Produits disponibles uniquement</label>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- filter and products -->
         <section class="flex flex-row">
+
             <!-- filter computer -->
-            <div class="bg-main md:flex hidden flex-col w-full ml-5">
+            <div class="bg-main md:flex hidden flex-col w-full ml-5 text-white h-full">
+
+                <!-- logo, text filter -->
                 <div class="flex flex-row items-center justify-center pt-5 gap-20">
-                    <h3 class="text-white text-[48px]">Filtrer</h3>
+                    <h3 class="text-[48px]">Filtrer</h3>
                     <img class="invert w-10 h-10" src="assets/image/filter.png" alt="filter">
+                </div>
+
+                <!-- line -->
+                <div class="w-full h-px bg-back"></div>
+
+                <!-- price, slider -->
+                <div class="flex flex-col">
+                    <div class="p-6 w-full max-w-md">
+                        <p class="pb-2 text-[36px]">Prix</p>
+                        <div class="pb-4">
+                            <input type="range" class="w-full accent-back" min="0" max="2000" value="500" oninput="updatePriceComputer(this.value)">
+                        </div>
+                        <div class="flex justify-between">
+                            <span id="minPriceComputer">0€</span>
+                            <span id="maxPriceComputer">2000€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="w-full h-px bg-back"></div>
+
+                <!-- categories -->
+                <div class="flex flex-col">
+                    <div class="p-6 w-full max-w-md">
+                        <p class="pb-2 text-[36px]">Catégories</p>
+                          <div class="flex flex-col gap-2 text-[24px]">
+                            <div>
+                                <input type="checkbox" id="ordinateurs" name="ordinateurs"/>
+                                <label for="ordinateurs">Ordinateurs</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="pieces" name="pieces"/>
+                                <label for="pieces">Pièces</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="peripheriques" name="peripheriques"/>
+                                <label for="peripheriques">Périphériques</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="reseau" name="reseau"/>
+                                <label for="reseau">Réseau</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="tablettes" name="tablettes"/>
+                                <label for="tablettes">Tablettes</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="w-full h-px bg-back"></div>
+
+                <!-- brands -->
+                <div class="flex flex-col">
+                    <div class="p-6 w-full max-w-md">
+                        <p class="pb-2 text-[36px]">Marques</p>
+                          <div class="flex flex-col gap-2 text-[24px]">
+                            <div>
+                                <input type="checkbox" id="marque1" name="marque1"/>
+                                <label for="marque1">Marque 1</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="marque2" name="marque2"/>
+                                <label for="marque2">Marque 2</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="marque3" name="marque3"/>
+                                <label for="marque3">Marque 3</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="marque4" name="marque4"/>
+                                <label for="marque4">Marque 4</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="marque5" name="marque5"/>
+                                <label for="marque5">Marque 5</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="w-full h-px bg-back"></div>
+
+                <!-- products availables -->
+                <div class="flex flex-col">
+                    <div class="p-6 w-full max-w-md">
+                        <p class="pb-2 text-[36px]">Disponible</p>
+                        <div class="text-[24px]">
+                            <input type="checkbox" id="disponibles" name="disponibles"/>
+                            <label for="disponibles">Produits disponibles uniquement</label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- products -->
-            <div class="flex flex-wrap gap-2 px-5 py-5 items-center justify-center" id="products">
+            <div class="flex flex-wrap gap-2 px-5 py-5 items-center justify-center pb-15" id="products">
                 
-        </div>
+            </div>
 
         </section>
         
@@ -194,38 +248,13 @@
     </main>
 
     <!-- footer -->
-    <footer class="bg-main flex flex-row text-white justify-center gap-15 py-10 border-2 border-main border-t-black">
-
-        <section class="flex flex-col gap-5">
-            <p class="text-[20px]">TechShop</p>
-            <div class="flex flex-col gap-3">
-                <p>Contactez nous</p>
-                <p>Mentions légales/CGU</p>
-                <p>Politique de confidentialité</p>
-                <p>Nos réseaux :</p>
-                <div class="flex flex-row gap-2">
-                    <img class="invert w-10" src="assets/image/x-logo.svg" alt="xLogo">
-                    <img class="w-4" src="assets/image/facebook.svg" alt="FacebookLogo">
-                    <img src="assets/image/youtube.svg" alt="YoutubeLogo">
-                    <img class="invert w-10" src="assets/image/mail.svg" alt="mailLogo">
-                </div>
-            </div>
-        </section>
-
-        <section class="flex flex-col gap-5">
-            <p class="text-[20px]">Catégories populaires</p>
-            <div class="flex flex-col gap-3">
-                <p>Composants</p>
-                <p>Ordinateurs</p>
-                <p>Stockage interne</p>
-                <p>Périphérique</p>
-            </div>
-        </section>
+    <footer class="bg-main flex flex-row text-white justify-center gap-15 py-10 border-2 border-main border-t-black" id="footer">
 
     </footer>
 
     <!-- link to js -->
     <script src="assets/js/products.js"></script>
+    <script src="assets/js/common.js"></script>
 
 </body>
 </html>
