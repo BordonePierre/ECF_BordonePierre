@@ -32,16 +32,20 @@ header.innerHTML=`
 
             <!-- icones profile/cart -->
             <section class="hidden md:flex flex-row gap-10">
-                <img class="w-10 h-10" src="assets/image/logoUSer.png" alt="userLogo">
-                <img class="w-10 h-10" src="assets/image/logoCart.png" alt="cartLogo">
+                <a href = "account.html"><img class="w-10 h-10" src="assets/image/logoUSer.png" alt="userLogo"></a>
+                <a href = "cart.html"><img class="w-10 h-10" src="assets/image/logoCart.png" alt="cartLogo"></a>
             </section>
 
             <!-- menu burger -->
-            <button onclick="menuBurger()" class="md:hidden flex flex-col gap-1 ml-2">
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-                <span class="block w-5 h-[0.15rem] bg-back"></span>
-            </button>
+            <section class = "flex flex-row gap-2 md:hidden items-center">
+                <button onclick="menuBurger()" class="flex flex-col gap-1 ml-2">
+                    <span class="block w-5 h-[0.15rem] bg-back"></span>
+                    <span class="block w-5 h-[0.15rem] bg-back"></span>
+                    <span class="block w-5 h-[0.15rem] bg-back"></span>
+                </button>
+                <a href = "account.html"><img class="w-7 h-7" src="assets/image/logoUSer.png" alt="userLogo"></a>
+                <a href = "cart.html"><img class="w-7 h-7" src="assets/image/logoCart.png" alt="cartLogo"></a>
+            </section>
 
         </nav>
 

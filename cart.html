@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link href="assets/scss/output.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- header -->
+    <header id="header">
+        
+    </header>
+
+    <!-- main -->
+    <main class="bg-back pt-25 md:pt-5 md:text-[24px]">
+
+        <!-- cart -->
+        <section class="p-5 text-white"> 
+
+            <div class="p-5 bg-main">
+
+                <!-- your cart -->
+                <p class="flex items-center justify-center p-2">VOTRE PANIER</p>
+
+                <!-- informations products -->
+                <div class="flex flex-row justify-between">
+                    <p>IMAGE</p>
+                    <p>NOM</p>
+                    <p>QUANTITE</p>
+                    <p>SOUS-TOTAL</p>
+                </div>
+
+                <!-- line -->
+                <div class="w-full h-px bg-back"></div>
+
+                <!-- informations first product -->
+                <div class="flex flex-row pt-2 justify-between items-center">
+                    <img class="w-15 h-15 md:w-30 md:h-30 border-2 border-black" src="assets/image/ImageProduitPcGaming1.png" alt="pcGaming1">
+                    <p>PC Gaming 1</p>
+                    <select id="quantity1" name="quantity"
+                    class="bg-back border-2 border-black text-black p-2 rounded">
+                    
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    
+                    </select>
+                    <p class="pt-4">1739,90€</p>
+                </div>
+
+                <!-- informations second product -->
+                <div class="flex flex-row pt-2 justify-between items-center">
+                    <img class="w-15 h-15 md:w-30 md:h-30 border-2 border-black" src="assets/image/ImageProduitPcGaming2.png" alt="pcGaming2">
+                    <p>PC Gaming 2</p>
+                    <select id="quantity2" name="quantity"
+                    class="bg-back border-2 border-black text-black p-2 rounded">
+                    
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    
+                    </select>
+                    <p class="pt-4">1989,90€</p>
+                </div>
+
+                <!-- informations third product -->
+                <div class="flex flex-row pt-2 justify-between items-center">
+                    <img class="w-15 h-15 md:w-30 md:h-30 border-2 border-black" src="assets/image/ImageProduitPcGaming1.png" alt="pcGaming3">
+                    <p>PC Gaming 3</p>
+                    <select id="quantity3" name="quantity"
+                    class="bg-back border-2 border-black text-black p-2 rounded">
+                    
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    
+                    </select>
+                    <p class="pt-4">1989,90€</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="md:flex md:flex-row md:items-center md:justify-center">
+
+            <p class="p-5 text-[24px] md:text-[36px]">Total : 5719,70€</p>
+
+            <div class="flex justify-center p-5">
+                <a href="confirmation.html"><button class="bg-main text-white items-center py-5 px-15 border-2 border-black hover:bg-main/80">PASSER COMMANDE</button></a>
+            </div>
+
+        </div>
+        
+        
+
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-main flex flex-row text-white justify-center gap-15 py-10 border-2 border-main border-t-black" id="footer">
+
+    </footer>
+
+    <!-- link to js -->
+    <script src="assets/js/common.js"></script>
+
+</body>
+</html>
