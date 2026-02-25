@@ -26,14 +26,14 @@ header.innerHTML=`
             <input type="text"
                     id="searchInput"
                     placeholder="Rechercher..."
-                    class="px-1 py-1 md:px-10 md:py-3 md:mr-10 text-lg rounded-2xl bg-white focus:border-sky-500 focus:outline focus:outline-sky-500"
+                    class="px-1 py-1 md:pr-20 md:py-3 md:mr-30 text-lg rounded-2xl bg-white focus:border-sky-500 focus:outline focus:outline-sky-500"
             />
 
 
             <!-- icones profile/cart -->
             <section class="hidden md:flex flex-row gap-10">
-                <a href = "account.html"><img class="w-10 h-10" src="assets/image/logoUSer.png" alt="userLogo"></a>
-                <a href = "cart.html"><img class="w-10 h-10" src="assets/image/logoCart.png" alt="cartLogo"></a>
+                <a href = "account.html"><img class="w-10 h-10 duration-200 hover:scale-120" src="assets/image/logoUSer.png" alt="userLogo"></a>
+                <a href = "cart.html"><img class="w-10 h-10 duration-200 hover:scale-120" src="assets/image/logoCart.png" alt="cartLogo"></a>
             </section>
 
             <!-- menu burger -->
@@ -175,7 +175,7 @@ footer.innerHTML=`
 <section class="flex flex-col gap-5">
             <p class="text-[20px]">TechShop</p>
             <div class="flex flex-col gap-3">
-                <p>Contactez nous</p>
+                <a href = "contact.html"><p>Contactez nous</p></a>
                 <a href="legal.html"><p>Mentions légales/CGU</p></a>
                 <p>Politique de confidentialité</p>
                 <p>Nos réseaux :</p>
