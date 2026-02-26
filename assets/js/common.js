@@ -23,11 +23,21 @@ header.innerHTML=`
             <a href="index.html"><img class="w-40 h-25 md:w-80 md:h-50" src="assets/image/Logo.png" alt="Logo"></a>
 
             <!-- research -->
-            <input type="text"
-                    id="searchInput"
-                    placeholder="Rechercher..."
-                    class="px-1 py-1 md:pr-20 md:py-3 md:mr-30 text-lg rounded-2xl bg-white focus:border-sky-500 focus:outline focus:outline-sky-500"
-            />
+            <div class="flex-1 flex justify-center px-4">
+                <div class="flex w-full max-w-xl">
+                    
+                    <input 
+                        type="text"
+                        id="searchInput"
+                        placeholder="Rechercher un produit..."
+                        class="w-full px-4 py-2 rounded-l-2xl border border-gray-300 
+                            focus:outline-none focus:ring-2 focus:ring-black bg-white"
+                    />
+
+                    <button id="searchBtn" class="px-5 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-r-2xl">🔍</button>
+
+                </div>
+            </div>
 
 
             <!-- icones profile/cart -->
@@ -198,3 +208,83 @@ footer.innerHTML=`
             </div>
         </section>
 `
+
+// create and add products
+let productsSearch = {
+    product: [],
+
+    ajouterProduit(nom, prix, image, disponible, quantite, nomhtml){
+        this.product.push({nom: nom, prix: prix, image: image, disponible: disponible, quantite: quantite, nomhtml: nomhtml});
+    }
+}
+
+productsSearch.ajouterProduit("PC Gamer 1", 1739.90, "assets/image/ImageProduitPcGaming1.png", true, 10, "pcgamer1");
+productsSearch.ajouterProduit("PC Gamer 2", 1989.90, "assets/image/ImageProduitPcGaming2.png", false, 0, "pcgamer2");
+productsSearch.ajouterProduit("PC Gamer 3", 1989.90, "assets/image/ImageProduitPcGaming1.png", true, 10, "pcgamer3");
+productsSearch.ajouterProduit("PC Travail 1", 799.90, "assets/image/ImageProduitPcTravail1.png", true, 10, "pctravail1");
+productsSearch.ajouterProduit("PC Travail 2", 999.99, "assets/image/ChatGPT Image Feb 20, 2026, 09_13_28 AM.png", true, 10, "pctravail2");
+productsSearch.ajouterProduit("PC Travail 3", 1239.90, "assets/image/ImageProduitPcTravail1.png", true, 10, "pctravail3");
+productsSearch.ajouterProduit("Carte graphique 1", 399.99, "assets/image/ImageProduitCarteGraphique1.png", true, 10, "cartegraphique1");
+productsSearch.ajouterProduit("Carte graphique 2", 699.99, "assets/image/ImageProduitCarteGraphique2.png", true, 10, "cartegraphique2");
+productsSearch.ajouterProduit("Carte graphique 3", 829.90, "assets/image/ImageProduitCarteGraphique1.png", false, 0, "cartegraphique3");
+productsSearch.ajouterProduit("Ecran 1", 299.99, "assets/image/ImageProduitEcran1.png", false, 0, "ecran1");
+productsSearch.ajouterProduit("Ecran 2", 499.99, "assets/image/ImageProduitEcran2.png", true, 10, "ecran2");
+productsSearch.ajouterProduit("Ecran 3", 599.99, "assets/image/ImageProduitEcran1.png", false, 0, "ecran3");
+
+// show products HTML
+function afficherProduits(produitsTrouves) {
+    const results = document.getElementById('textResults');
+    results.classList.remove('hidden');
+    const line = document.getElementById('line');
+    line.classList.remove('hidden');
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML=``;
+
+    if(produitsTrouves.length === 0){
+        resultsContainer.innerHTML = "<p class='text-center'>Aucun produit trouvé après votre recherche.</p>";
+        return;
+    }
+
+    produitsTrouves.forEach(product => {
+        let dispo = "";
+        let couleur = "";
+
+        // show availability
+        if(product.disponible && product.quantite > 0){
+            dispo = "disponible";
+            couleur = "text-green-600";
+        }else{
+            dispo = "indisponible";
+            couleur = "text-red-400";
+        }
+
+        const productCard = document.createElement("div");
+        productCard.className = "transition-all duration-200 hover:scale-102"
+        productCard.innerHTML = `
+            <a href="${product.nomhtml + ".html"}"><img class="w-127 border-2 border-black" src="${product.image}" alt="${product.nom}">
+                <div class="bg-main border-2 border-black text-white text-[24px] flex flex-col items-center">
+                    <h3>${product.nom}</h3>
+                    <p>Prix : ${product.prix}€</p>
+                    <p class="${couleur}">${dispo}</p>
+                </div></a>
+            `;
+        resultsContainer.appendChild(productCard);
+    });
+}
+
+// listening button
+document.getElementById("searchBtn").addEventListener("click", () => {
+    const searchValue = document.getElementById("searchInput").value.toLowerCase().trim();
+    const produitsTrouves = productsSearch.product.filter(p => p.nom.toLowerCase().includes(searchValue));
+    afficherProduits(produitsTrouves);
+
+    // scroll to results
+    document.getElementById("results").scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// search on "enter"
+document.getElementById("searchInput").addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        document.getElementById("searchBtn").click();
+    }
+});
